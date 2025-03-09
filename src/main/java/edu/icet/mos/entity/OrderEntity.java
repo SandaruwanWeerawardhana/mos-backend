@@ -1,5 +1,6 @@
-package edu.icet.mos.dto;
+package edu.icet.mos.entity;
 
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -9,7 +10,11 @@ import lombok.ToString;
 @NoArgsConstructor
 @AllArgsConstructor
 @ToString
-public class Order {
+@Entity
+@Table(name = "orders")
+public class OrderEntity {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer orderID;
     private String customerName;
     private String contact;
@@ -17,5 +22,6 @@ public class Order {
     private Integer qty;
     private Double price;
     private Integer discount;
+    private Double totPrice;
 
 }

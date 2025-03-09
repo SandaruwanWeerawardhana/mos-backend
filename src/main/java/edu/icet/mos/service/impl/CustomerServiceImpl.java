@@ -46,7 +46,6 @@ public class CustomerServiceImpl implements CustomerService {
 
         if (cusOpt.isPresent()) {
             CustomerEntity existCus = cusOpt.get();
-
             existCus.setName(customer.getName());
             existCus.setContact(customer.getContact());
             existCus.setAddress(customer.getAddress());

@@ -11,7 +11,7 @@ public interface ItemService {
 
     void delete(Integer id);
 
-    void update(Item customer, Integer id);
+    void update(Item item, Integer id);
 
     List<Item> searchById(Integer id);
 
