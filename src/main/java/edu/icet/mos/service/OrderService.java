@@ -1,7 +1,7 @@
 package edu.icet.mos.service;
 
-import edu.icet.mos.dto.Customer;
 import edu.icet.mos.dto.Order;
+import org.springframework.web.bind.annotation.PathVariable;
 
 import java.util.List;
 
@@ -15,4 +15,6 @@ public interface OrderService {
     void update(Order order);
 
     Order searchById(Integer id);
+
+    List<Order> getAllBYId(Integer id);
 }

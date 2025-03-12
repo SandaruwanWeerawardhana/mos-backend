@@ -9,6 +9,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 @RequiredArgsConstructor
@@ -46,5 +47,13 @@ public class OrderServiceImpl implements OrderService {
     @Override
     public Order searchById(Integer id) {
         return mapper.map(repository.findById(id), Order.class);
+    }
+
+    @Override
+    public List<Order> getAllBYId(Integer id) {
+        List<OrderEntity> orderEntities = repository.findAllById(Collections.singleton(id));
+        List<Order> orderList = new ArrayList<>();
+        orderEntities.forEach(el -> orderList.add(mapper.map(el, Order.class)));
+        return orderList;
     }
 }

@@ -17,5 +17,5 @@ public class Order {
     private Integer qty;
     private Double price;
     private Integer discount;
-
+    private Double totPrice;
 }

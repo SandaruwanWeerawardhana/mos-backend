@@ -22,7 +22,6 @@ public class OrderController {
 
     @DeleteMapping("/delete/{id}")
     public void deleteOrder(@PathVariable Integer id) {
-        System.out.println(id);
         service.delete(id);
     }
 
@@ -39,6 +38,11 @@ public class OrderController {
     @PutMapping("/update")
     public void update(@RequestBody Order order) {
         service.update(order);
+    }
+
+    @GetMapping("/get-all-byID/{id}")
+    List<Order> getAllBYId(@PathVariable Integer id) {
+        return service.getAllBYId(id);
     }
 
 }
