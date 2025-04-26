@@ -14,5 +14,6 @@ public class Item {
     private Integer id;
     private String name;
     private Double price;
+    private Integer qtyOnHand;
     private String image;
 }
